@@ -1,0 +1,627 @@
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Edu AU VIC WA NT Hand', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #FF6384;
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+
+}
+ /* Header text */
+header h1 {
+    font-size: 3em;
+    font-family: "Berkshire Swash", serif;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('./images/main masthead.jpeg'), url('./images/no back.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, 90% 50%; /* Adjust positioning of the second image */
+
+    background-size: cover, 20%;
+    color: black;
+    text-align: center;
+    padding: 2em;
+    z-index: 1;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('./images/no back.png');
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: top right;
+
+    background-attachment: fixed;
+    z-index: 2;
+}
+
+
+
+.hero h2, .hero p, .hero .cta {
+    position: relative;
+    z-index: 2;
+    font-family: "Emilys Candy", serif;
+
+}
+
+
+
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Disable parallax effect on smaller screens */
+    }
+}
+
+.gift-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: yellowgreen;
+
+}
+
+.purchase-button {
+    background-color: #fff;
+    color: #28a745;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.purchase-button:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.gift-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.gift-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Edu AU VIC WA NT Hand', sans-serif;
+}
+
+.gift-content p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.gift-image {
+    flex: 1;
+    text-align: center;
+}
+
+.gift-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .gift-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gift-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Flavors Section */
+.flavors {
+    background-color:mediumvioletred;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.flavors h2 {
+    font-size: 2em;
+    color: #FF6384;
+    margin-bottom: 2em;
+}
+
+.flavor-flex {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.flavor-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Style for Flavor Images */
+.flavor-image {
+    width: 100%;
+    max-width: 150px;
+    height: 150px; /* Set a fixed height for consistency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Hover Effect */
+.flavor-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+.flavor-item img {
+    margin-bottom: 1em;
+}
+
+.custom-section {
+    height: 100px;
+    width: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: auto;
+    color: #1D3557;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.custom-section h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.custom-section::before, .custom-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    background-color: #1D3557;
+    transition: all .25s ease-in-out;
+}
+
+.custom-section::after {
+    height: 2px;
+    width: 300px;
+    box-shadow: 0 98px #1D3557;
+}
+
+.custom-section::before {
+    width: 2px;
+    height: 100px;
+    box-shadow: 318px 0 #1D3557;
+}
+
+.custom-section:hover::before {
+    left: -10px;
+    box-shadow: 318px 0 #1D3557;
+}
+
+.custom-section:hover::after {
+    top: -10px;
+    box-shadow: 0 118px #1D3557;
+}
+/* New Launches Section */
+.new-launches {
+    background-color: yellow;
+    padding: 3em;
+    text-align: center;
+    font-family: "Emilys Candy", serif;
+}
+
+.new-launches h2 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2.5em;
+    color: #FF6384;
+    margin-bottom: 1rem;
+}
+
+.new-launches p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 2em;
+}
+
+.launch-item {
+    background-color: #fff;
+    border: 2px solid #FF6384;
+    padding: 1.5em;
+    text-align: center;
+    width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.launch-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #FF6384;
+    margin-bottom: 1.5em;
+}
+
+.launch-item p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+.launch-item button {
+    background-color: #FF6384;
+    color: white;
+    padding: 0.75em 1.25em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.launch-item button:hover {
+    background-color: #e55371;
+}
+
+
+
+.about {
+    background: #f0f0f0;
+    padding: 2em 1em;
+    text-align: center;
+    background: linear-gradient(135deg, #FF6384, #FFB6C1);
+    transition: background 0.3s ease;
+    margin-bottom: 2em;
+}
+
+
+.about h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 1.5em;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+.shopping {
+    background-color:lightskyblue;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.shopping h2 {
+    font-size: 2em;
+    color: #FF6384;
+    margin-bottom: 2em;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+}
+
+.shopping-items {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.shopping-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    width: 200px;
+}
+
+.shopping-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.shopping-item button {
+    background-color: #FF6384;
+    color: #fff;
+    padding: 0.8em 1.2em;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shopping-item button:hover {
+    background-color: #e0506d;
+}
+
+/* Recipes Section */
+.recipes {
+    background-color: pink;
+    padding: 2em 1em;
+    text-align: center;
+
+}
+
+.recipes h2 {
+    font-size: 2em;
+    color: #FF6384;
+    margin-bottom: 2em;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.recipe-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    width: 250px;
+    text-align: center;
+}
+
+.recipe-item h3 {
+    font-size: 1.5em;
+    color: #FF6384;
+    margin-bottom: 1rem;
+    font-family: 'Homemade Apple', cursive;
+}
+
+.recipe-item p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.recipe-item a {
+    text-decoration: none;
+    color: #FF6384;
+    font-weight: bold;
+}
+
+.recipe-item a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .shopping-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.share-recipes {
+    background-color: #fff3f3;
+    padding: 2em 1rem;
+    text-align: center;
+}
+
+.share-recipes h2 {
+    font-size: 2em;
+    color: #FF6384;
+    margin-bottom: 1.5em;
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+}
+
+.share-recipes p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+
+}
+
+#share-recipe-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#share-recipe-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#share-recipe-form input,
+#share-recipe-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#share-recipe-form button {
+    width: 100%;
+    background-color: #FF6384;
+    color: #fff;
+    padding: 1em;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#share-recipe-form button:hover {
+    background-color: #e0506d;
+}
+
+
+/* Video Section */
+.video-section {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+
+
+.video-section iframe {
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    border-radius: 8px;
+}/* Footer Styling */
+footer {
+    background: pink;
+    padding: 2em;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    font-family: "Berkshire Swash", serif;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-logo img {
+    width: 150px;
+}
+
+footer .footer-info {
+    font-size: 0.9em;
+}
+
+footer .contact-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+footer .contact-form input,
+footer .contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer .contact-form button {
+    width: 100%; /* Ensures the button takes up full width */
+    background-color: white;
+    color: black;
+    padding: 1em;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Button */
+footer .contact-form button:hover {
+    background-color: #ff6384; /* Change to pink on hover */
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive Button Styling */
+@media (max-width: 768px) {
+    footer .contact-form button {
+        padding: 1.2em;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .contact-form button {
+        padding: 1.5em;
+        font-size: 1.2em;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .flavor-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-section iframe {
+        width: 100%;
+        height: auto;
+    }
+}
